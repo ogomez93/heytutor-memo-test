@@ -29,7 +29,7 @@ export default function GameType({ gameType }) {
       </div>
       <div>
         { (collection !== null) && <Link href={`${gameType}`}>Continue</Link> }
-        <Link href={`${gameType}/start`}>Start</Link>
+        <Link href={`/start/${gameType}`}>Start</Link>
       </div>
     </li>
   )
