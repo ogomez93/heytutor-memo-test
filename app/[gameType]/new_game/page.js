@@ -16,7 +16,7 @@ export default function StartGame({ params }) {
         <br />
         How many pairs of cards do you want? (min: 4, max: 15)
       </div>
-      <PairsForm />
+      <PairsForm gameType={gameType} />
     </section>
   )
 }
