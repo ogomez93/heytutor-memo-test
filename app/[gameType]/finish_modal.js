@@ -22,9 +22,9 @@ export default function FinishModal({ attemptCounter, gameType, pairsAmount }) {
   return (
     <div className='absolute top-0 bottom-0 left-0 right-0'>
       <div className='absolute top-0 left-0 right-0 mx-2 my-4 md:mx-8 md:my-16 px-4 py-8 border border-white rounded-xl flex flex-col justify-between text-center bg-black/[0.9]'>
-        <h1>Congrats! Your score was {score}</h1>
-        { newRecord && <div>New Record!</div> }
-        <Link href='/'>Home</Link>
+        <h1 className='my-4'>Congrats! Your score was {score}</h1>
+        { newRecord && <div className='my-4'>New Record!</div> }
+        <Link href='/' className='my-4'>Home</Link>
       </div>
     </div>
   )

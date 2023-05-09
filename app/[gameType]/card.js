@@ -13,7 +13,7 @@ const dimensions = `${lgDimensions} ${mdDimensions} ${smDimensions} ${xsDimensio
 export default function Card({ src, currentSelection, index, matched, onClick }) {
   const flipped = matched || currentSelection.includes(index)
   const handleClick = () => !flipped && onClick(index)
-  const baseClassNames = clsx(flipCard.flipCard, dimensions, { [flipCard.flipped]: flipped })
+  const baseClassNames = clsx(flipCard.flipCard, dimensions, { [flipCard.flipped]: flipped, 'cursor-pointer': !flipped })
   const imgsrc = require(`../../public${src}`)
 
   return (
