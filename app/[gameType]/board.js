@@ -64,6 +64,7 @@ export default function Board({ gameType, imagePaths }) {
       currentSelection={currentSelection}
       matched={matchedCards.includes(src)}
       onClick={handleCardClick}
+      pairsAmount={pairsAmount.current}
       src={src}
     />
 
@@ -71,7 +72,7 @@ export default function Board({ gameType, imagePaths }) {
 
   return (
     <>
-      <div className='flex flex-wrap justify-around grow align-center'>
+      <div className='flex flex-wrap justify-around grow items-center'>
         { board.current.map(renderCard) }
       </div>
       { matchedCards.length === (pairsAmount.current) &&

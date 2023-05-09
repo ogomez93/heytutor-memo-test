@@ -4,16 +4,20 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import flipCard from './flipCard.module.css'
 
-const lgDimensions = 'lg:m-2 lg:w-32 lg:h-32'
-const mdDimensions = 'md:w-24 md:h-24'
-const smDimensions = 'md:w-20 md:h-20'
-const xsDimensions = 'm-1 w-16 h-16'
-const dimensions = `${lgDimensions} ${mdDimensions} ${smDimensions} ${xsDimensions}`
+const SMALL_CARD_DIMENSIONS = 'w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32'
+const BIG_CARD_DIMENSIONS = 'w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 xl:w-40 xl:h-40'
+const SPACING = 'm-1 lg:m-2'
+function cardDimensions(pairsAmount) {
+  return pairsAmount < 10 ? BIG_CARD_DIMENSIONS : SMALL_CARD_DIMENSIONS
+}
 
-export default function Card({ src, currentSelection, index, matched, onClick }) {
+export default function Card({ currentSelection, index, matched, onClick, pairsAmount, src }) {
   const flipped = matched || currentSelection.includes(index)
   const handleClick = () => !flipped && onClick(index)
-  const baseClassNames = clsx(flipCard.flipCard, dimensions, { [flipCard.flipped]: flipped, 'cursor-pointer': !flipped })
+  const baseClassNames = clsx(
+    flipCard.flipCard, SPACING, cardDimensions(pairsAmount),
+    { [flipCard.flipped]: flipped, 'cursor-pointer': !flipped }
+  )
   const imgsrc = require(`../../public${src}`)
 
   return (
