@@ -19,8 +19,8 @@ export default function Card({ src, currentSelection, index, matched, onClick })
   return (
     <div className={baseClassNames} onClick={handleClick}>
       <div className={flipCard.flipCardInner}>
-        <div className={flipCard.flipCardFront}>
-          { index + 1 }
+        <div className={clsx(flipCard.flipCardFront, 'hover:bg-gray-800 relative')}>
+          <span className='absolute right-1/2 bottom-1/2 translate-x-1/2 translate-y-1/2'>{ index + 1 }</span>
         </div>
         <div className={flipCard.flipCardBack}>
           <Image src={imgsrc} alt={src} width={150} height={150} className='h-full object-scale-down' />
