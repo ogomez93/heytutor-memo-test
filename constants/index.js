@@ -8,7 +8,7 @@ export const MATCHED_CARDS = 'matchedCards'
 export const PAIRS_AMOUNT = 'pairsAmount'
 
 export const GAME_TYPES = Object.freeze({
-  simpsons: 'simpsons',
   south_park: 'south_park',
-  super_smash: 'super_smash'
+  super_smash: 'super_smash',
+  the_simpsons: 'the_simpsons'
 })
