@@ -13,6 +13,7 @@ import FinishModal from './finish_modal'
 export default function Board({ gameType, imagePaths }) {
   const resetTimer = useRef(null)
   const board = useRef([])
+  const pairsAmount = useRef(0)
   const [attemptCounter, setAttemptCounter] = useState(0)
   const [currentSelection, setCurrentSelection] = useState([])
   const [matchedCards, setMatchedCards] = useState([])
@@ -21,6 +22,7 @@ export default function Board({ gameType, imagePaths }) {
   const saveMatchedCards = persistMatchedCards(gameType)
   useEffect(() => {
     board.current = initBoard(gameType, imagePaths)
+    pairsAmount.current = board.current.length / 2
     setAttemptCounter(parseInt(initAttemptCounter(gameType)))
     setCurrentSelection(initCurrentSelection(gameType))
     setMatchedCards(initMatchedCards(gameType))
@@ -72,8 +74,8 @@ export default function Board({ gameType, imagePaths }) {
       <div className='flex flex-wrap justify-around grow align-center'>
         { board.current.map(renderCard) }
       </div>
-      { matchedCards.length === (board.current.length / 2) &&
-        <FinishModal attemptCounter={attemptCounter} gameType={gameType} pairsAmount={board.current.length / 2} /> }
+      { matchedCards.length === (pairsAmount.current) &&
+        <FinishModal attemptCounter={attemptCounter} gameType={gameType} pairsAmount={pairsAmount.current} /> }
     </>
   )
 }
