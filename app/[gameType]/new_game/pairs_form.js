@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation'
 import { useRef, useState } from 'react'
 
+import ButtonLink from '@/components/button_link'
 import { PAIRS_AMOUNT } from '@/constants'
 import { gameKeyBuilder } from '@/lib/key_builder'
 import resetGame from '@/lib/reset_game'
@@ -10,8 +11,7 @@ import resetGame from '@/lib/reset_game'
 export default function PairsForm({ gameType }) {
   const router = useRouter()
   const [pairsAmount, setPairsAmount] = useState(7)
-  const increase = () => pairsAmount !== 15 && setPairsAmount(pairsAmount + 1)
-  const decrease = () => pairsAmount !== 4 && setPairsAmount(pairsAmount - 1)
+  const handleChange = e => setPairsAmount(e.target.value)
   const keyBuilder = useRef(gameKeyBuilder(gameType))
 
   const handleStartGame = () => {
@@ -22,13 +22,16 @@ export default function PairsForm({ gameType }) {
 
   return (
     <>
-      <div className='flex justify-center'>
-        <button onClick={decrease}>-</button>
-        <input className='text-black text-center' type='number' value={pairsAmount} readOnly />
-        <button onClick={increase}>+</button>
+      <div>
+        <div className='flex justify-center'>
+          <span>Easiest</span>
+          <input className='text-black text-center mx-2' min={4} max={15} onChange={handleChange} step={1} type='range' value={pairsAmount} />
+          <span>Hardest</span>
+        </div>
+        <div>(Number of cards: { pairsAmount * 2 })</div>
       </div>
       <div className='text-center'>
-        <button onClick={handleStartGame}>Start Game</button>
+        <ButtonLink Tag='button' onClick={handleStartGame}>Start Game</ButtonLink>
       </div>
     </>
   )

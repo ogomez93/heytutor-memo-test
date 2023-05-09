@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import { startCase } from 'lodash'
+import ButtonLink from '@/components/button_link'
 import DisplayHighestScore from '@/components/display_highest_score'
 import ContinueButton from './continue_button'
 
@@ -12,7 +12,7 @@ export default function GameType({ gameType }) {
       </div>
       <div>
         <ContinueButton gameType={gameType} />{' '}
-        <Link href={`/${gameType}/new_game`}>Start</Link>
+        <ButtonLink href={`/${gameType}/new_game`}>Start</ButtonLink>
       </div>
     </li>
   )
