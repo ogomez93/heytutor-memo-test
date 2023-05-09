@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
         <header className='text-center p-2 relative'>
           <h1 className='text-lg'>Memo Test</h1>
         </header>
-        <main className='flex flex-col items-center grow justify-between p-8'>
+        <main className='flex flex-col items-center grow justify-between py-2 px-4 lg:px-8'>
           {children}
         </main>
         <footer className='text-xs py-1 px-3 text-center'>
