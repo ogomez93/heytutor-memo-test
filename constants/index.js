@@ -9,6 +9,6 @@ export const PAIRS_AMOUNT = 'pairsAmount'
 
 export const GAME_TYPES = Object.freeze({
   south_park: 'south_park',
-  super_smash: 'super_smash',
+  super_smash_bros: 'super_smash_bros',
   the_simpsons: 'the_simpsons'
 })
