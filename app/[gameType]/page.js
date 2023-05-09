@@ -12,7 +12,7 @@ export default function Game({ params }) {
   const imagePaths = getImagePaths()
   return (
     <div className='w-full relative grow flex flex-col'>
-      <div className='text-center'>Playing {startCase(gameType)} game</div>
+      <div className='text-center'>Playing <b>{startCase(gameType)}</b> game</div>
       <DisplayHighestScore className='text-center' gameType={gameType} />
       <Board gameType={gameType} imagePaths={imagePaths} />
     </div>

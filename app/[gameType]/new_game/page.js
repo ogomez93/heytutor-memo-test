@@ -7,14 +7,17 @@ export default function StartGame({ params }) {
 
   return (
     <section className='w-full text-center'>
-      <h1>
-        Starting game: {startCase(gameType)}
+      <h1 className='text-2xl my-4'>
+        Starting <b>{startCase(gameType)}</b> game
       </h1>
-        <DisplayHighestScore gameType={gameType} text={`Your highest score at ${startCase(gameType)} was: `} />
-      <div>
-        Let's set the difficulty now.
-        <br />
-        How many pairs of cards do you want? (min: 4, max: 15)
+      <DisplayHighestScore
+        className='text-md my-4'
+        gameType={gameType}
+        highestScoreClassName='text-xl font-bold'
+        text={<div>Highest Score</div>}
+      />
+      <div className='text-xl mt-6 mb-2'>
+        Choose the difficulty
       </div>
       <PairsForm gameType={gameType} />
     </section>

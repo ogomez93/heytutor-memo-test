@@ -7,6 +7,7 @@ import ButtonLink from '@/components/button_link'
 import { PAIRS_AMOUNT } from '@/constants'
 import { gameKeyBuilder } from '@/lib/key_builder'
 import resetGame from '@/lib/reset_game'
+import difficultyLabels from './difficultyLabels.module.css'
 
 export default function PairsForm({ gameType }) {
   const router = useRouter()
@@ -24,13 +25,13 @@ export default function PairsForm({ gameType }) {
     <>
       <div>
         <div className='flex justify-center'>
-          <span>Easiest</span>
+          <span className={difficultyLabels.easy}>Easiest</span>
           <input className='text-black text-center mx-2' min={4} max={15} onChange={handleChange} step={1} type='range' value={pairsAmount} />
-          <span>Hardest</span>
+          <span className={difficultyLabels.hard}>Hardest</span>
         </div>
         <div>(Number of cards: { pairsAmount * 2 })</div>
       </div>
-      <div className='text-center'>
+      <div className='text-center mt-12'>
         <ButtonLink Tag='button' onClick={handleStartGame}>Start Game</ButtonLink>
       </div>
     </>

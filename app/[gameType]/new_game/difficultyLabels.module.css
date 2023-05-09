@@ -1,0 +1,19 @@
+.easy {
+  background: -webkit-linear-gradient(left, green, white);
+  background: -o-linear-gradient(right, green, white);
+  background: -moz-linear-gradient(right, green, white);
+  background: linear-gradient(to right, green, white);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hard {
+  background: -webkit-linear-gradient(left, white, red);
+  background: -o-linear-gradient(right, white, red);
+  background: -moz-linear-gradient(right, white, red);
+  background: linear-gradient(to right, white, red);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
