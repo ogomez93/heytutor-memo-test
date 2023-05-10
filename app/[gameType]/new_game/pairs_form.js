@@ -7,7 +7,7 @@ import ButtonLink from '@/components/button_link'
 import { PAIRS_AMOUNT } from '@/constants'
 import { gameKeyBuilder } from '@/lib/key_builder'
 import resetGame from '@/lib/reset_game'
-import difficultyLabels from './difficultyLabels.module.css'
+import difficultyLabels from './difficulty_labels.module.css'
 
 export default function PairsForm({ gameType }) {
   const router = useRouter()
