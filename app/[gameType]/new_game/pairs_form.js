@@ -9,9 +9,9 @@ import { gameKeyBuilder } from '@/lib/key_builder'
 import resetGame from '@/lib/reset_game'
 import difficultyLabels from './difficulty_labels.module.css'
 
-export default function PairsForm({ gameType }) {
+export default function PairsForm({ gameType, pairs = 7 }) {
   const router = useRouter()
-  const [pairsAmount, setPairsAmount] = useState(7)
+  const [pairsAmount, setPairsAmount] = useState(pairs)
   const handleChange = e => setPairsAmount(e.target.value)
   const keyBuilder = useRef(gameKeyBuilder(gameType))
 

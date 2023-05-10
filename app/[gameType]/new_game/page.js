@@ -2,7 +2,8 @@ import { startCase } from 'lodash'
 import DisplayHighestScore from '@/components/display_highest_score'
 import PairsForm from './pairs_form'
 
-export default function StartGame({ params }) {
+export default function StartGame(props) {
+  const { params, searchParams: { pairsAmount } = {} } = props
   const { gameType } = params
 
   return (
@@ -19,7 +20,7 @@ export default function StartGame({ params }) {
       <div className='text-xl mt-6 mb-2'>
         Choose the difficulty
       </div>
-      <PairsForm gameType={gameType} />
+      <PairsForm gameType={gameType} pairs={parseInt(pairsAmount)} />
     </section>
   )
 }
