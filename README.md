@@ -26,4 +26,4 @@ npm run dev
 yarn dev
 ```
 
-And then just visit [http://localhost:3000](http://localhost:3000) and enjoy.
+And then just visit [http://localhost:3000](http://localhost:3000) and enjoy. It's fully responsive, and it has light and dark themes support!
