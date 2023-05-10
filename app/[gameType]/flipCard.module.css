@@ -8,13 +8,19 @@
 
 /* This container is needed to position the front and back side */
 .flipCardInner {
-  border: 1px solid #f1f1f1;
+  border: 1px solid #020617;
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
   transition: transform 0.3s;
   transform-style: preserve-3d;
+}
+
+@media (prefers-color-scheme: dark) {
+  .flipCardInner {
+    border-color: #f1f1f1;
+  }
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
@@ -33,13 +39,27 @@
 
 /* Style the front side (fallback if image is missing) */
 .flipCardFront {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  .flipCardFront {
+    background-color: black;
+    color: white;
+  }
 }
 
 /* Style the back side */
 .flipCardBack {
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   transform: rotateY(180deg);
+}
+
+@media (prefers-color-scheme: dark) {
+  .flipCardBack {
+    background-color: black;
+    color: white;
+  }
 }

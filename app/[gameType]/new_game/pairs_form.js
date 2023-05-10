@@ -26,7 +26,7 @@ export default function PairsForm({ gameType }) {
       <div>
         <div className='flex justify-center'>
           <span className={difficultyLabels.easy}>Easiest</span>
-          <input className='text-black text-center mx-2' min={4} max={15} onChange={handleChange} step={1} type='range' value={pairsAmount} />
+          <input className='mx-2' min={4} max={15} onChange={handleChange} step={1} type='range' value={pairsAmount} />
           <span className={difficultyLabels.hard}>Hardest</span>
         </div>
         <div>(Number of cards: { pairsAmount * 2 })</div>

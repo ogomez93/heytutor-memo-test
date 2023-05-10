@@ -23,8 +23,8 @@ export default function Card({ currentSelection, index, matched, onClick, pairsA
   return (
     <div className={baseClassNames} onClick={handleClick}>
       <div className={flipCard.flipCardInner}>
-        <div className={clsx(flipCard.flipCardFront, 'hover:bg-gray-800 relative')}>
-          <span className='absolute right-1/2 bottom-1/2 translate-x-1/2 translate-y-1/2'>{ index + 1 }</span>
+        <div className={clsx(flipCard.flipCardFront, 'hover:bg-slate-100 dark:hover:bg-slate-800 relative')}>
+          <span className='absolute right-1/2 bottom-1/2 translate-x-1/2 translate-y-1/2 text-2xl'>{ index + 1 }</span>
         </div>
         <div className={flipCard.flipCardBack}>
           <Image src={imgsrc} alt={src} width={150} height={150} className='h-full object-scale-down' />
